@@ -73,9 +73,10 @@ client.on("interactionCreate", async (interaction) => {
 
   if (interaction.commandName === "muras") {
     const reason = interaction.options.getString("input");
+    interaction.reply("Me da um segundo, to pensando na resposta...");
     const resposta = await run(reason);
 
-    interaction.reply(resposta);
+    interaction.followUp(resposta);
   }
 });
 
