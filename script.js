@@ -1,12 +1,4 @@
 require("dotenv").config();
-
-const express = require("express");
-var cors = require("cors");
-const PORT = 4040;
-
-const app = express();
-app.use(express.json());
-app.use(cors());
 const {
   Client,
   Events,
@@ -88,8 +80,3 @@ client.on("interactionCreate", async (interaction) => {
 });
 
 client.login(process.env.TOKEN);
-
-app.listen(PORT, function (err) {
-  if (err) console.log("ERROOOOOOOOOO:" + err);
-  console.log("Server listening on PORT ", PORT);
-});
