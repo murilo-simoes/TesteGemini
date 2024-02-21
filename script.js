@@ -77,6 +77,9 @@ client.on("interactionCreate", async (interaction) => {
     let resposta = "";
     try {
       resposta = await run(reason);
+      if (resposta.length > 2000) {
+        resposta = resposta.substring(0, 1999);
+      }
     } catch {
       resposta =
         "Nem tudo eu posso te falar né irmão. Pergunta outra coisa ai!";
